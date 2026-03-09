@@ -1,17 +1,17 @@
 Egyed típusok, attribútomok
 
-Paciens(pid,nev,cim,telefon)
-vizsgalat(vid,pid,datum)
-betegseg(bnev)
-gyogyszer(gynev)
-mit_kap(bnev,gynev)
-mire_erzekeny(pid,gynev)
-diagnozis(vid,datum,bnev)
+Paciens(pid-PK,nev,cim,telefon)
+vizsgalat(vid-PK,pid-FK,datum)
+betegseg(bnev-PK)
+gyogyszer(gynev-PK)
+
 
 kapcsolatokat
+paciens-vizsgalat
+1-N
 vizsgalat-betegseg
-1-N 
+N-M (diagnózis) 
 betegseg-gyogyszer
-1-N 
+N-M (mit-kap)
 paciens-mire_erzekeny
-1-N 
+N-M (mire érzékeny)
