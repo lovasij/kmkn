@@ -1,0 +1,17 @@
+Egyed típusok, attribútomok
+
+Paciens(pid,nev,cim,telefon)
+vizsgalat(vid,pid,datum)
+betegseg(bnev)
+gyogyszer(gynev)
+mit_kap(bnev,gynev)
+mire_erzekeny(pid,gynev)
+diagnozis(vid,datum,bnev)
+
+kapcsolatokat
+vizsgalat-betegseg
+1-N 
+betegseg-gyogyszer
+1-N 
+paciens-mire_erzekeny
+1-N 
