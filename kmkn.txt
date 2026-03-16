@@ -1,6 +1,6 @@
 Egyed típusok, attribútomok
 
-Paciens(pid-PK,nev,cim,telefon)
+paciens(pid-PK,nev,cim,telefon)
 vizsgalat(vid-PK,pid-FK,datum)
 betegseg(bnev-PK)
 gyogyszer(gynev-PK)
@@ -10,8 +10,8 @@ kapcsolatokat
 paciens-vizsgalat
 1-N
 vizsgalat-betegseg
-N-M (diagnózis) (vid-PK-FK,Pid-PK-FK,datum_FK)
+N-M (diagnózis) (vid-PK-FK,Pid-PK-FK,datum-FK)
 betegseg-gyogyszer
 N-M (mit-kap)(bnev-FK-PK, gynev-FK-PK)
-paciens-mire_erzekeny
+paciens-gyogyszer
 N-M (mire érzékeny) (Pid-FK-PK, gynev-FK-PK)
