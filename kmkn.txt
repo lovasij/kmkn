@@ -10,8 +10,8 @@ kapcsolatokat
 paciens-vizsgalat
 1-N
 vizsgalat-betegseg
-N-M (diagnózis) 
+N-M (diagnózis) (vid-PK-FK,Pid-PK-FK,datum_FK)
 betegseg-gyogyszer
-N-M (mit-kap)
+N-M (mit-kap)(bnev-FK-PK, gynev-FK-PK)
 paciens-mire_erzekeny
-N-M (mire érzékeny)
+N-M (mire érzékeny) (Pid-FK-PK, gynev-FK-PK)
