@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div>
-        <h1></h1>
+        <h1>Orvosi betegnyilvántartás</h1>
+        <div>
+            <h3>Egyed típusok, attribútomok</h3>
+            <ul>
+                <li>Paciens(pid-PK,nev,cim,telefon)</li>
+                <li>vizsgalat(vid-PK,pid-FK,datum)</li>
+                <li>betegseg(bnev-PK)</li>
+                <li>gyogyszer(gynev-PK)</li>
+            </ul>
+            <h3>Kapcsolatok</h3>
+            <ul><li>paciens-vizsgalat</li>
+                <ul>
+                    <li>1-N</li>
+                </ul><li>vizsgalat-betegseg</li>
+                <ul>
+                    <li>N-M (diagnózis) (vid-PK-FK,Pid-PK-FK,datum_FK)</li>
+                </ul><li>betegseg-gyogyszer</li>
+                <ul>
+                    <li>N-M (mit-kap)(bnev-FK-PK, gynev-FK-PK)</li>
+                </ul><li>paciens-gyogyszer</li>
+                <ul>
+                    <li>N-M (mire érzékeny) (Pid-FK-PK, gynev-FK-PK)</li>
+                </ul>
+            </ul>
+        </div>
     </div>
 </body>
+
 </html>
