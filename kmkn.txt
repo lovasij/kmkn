@@ -10,7 +10,7 @@ kapcsolatokat
 paciens-vizsgalat
 1-N
 vizsgalat-betegseg
-N-M (diagnózis) (vid-PK-FK,pid-PK-FK,datum-FK)
+N-M (diagnózis) (vid-PK-FK,bnev-PK-FK,datum-FK)
 betegseg-gyogyszer
 N-M (mit_kap)(bnev-FK-PK, gynev-FK-PK)
 paciens-gyogyszer
