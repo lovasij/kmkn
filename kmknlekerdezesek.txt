@@ -1,0 +1,60 @@
+1. Melyik páciens milyen betegséget kapott diagnózisként
+SELECT paciens.nev,
+       vizsgalat.vid,
+       diagnozis.datum,
+       diagnozis.bnev
+FROM paciens
+JOIN vizsgalat
+ON paciens.pid = vizsgalat.pid
+JOIN diagnozis
+ON vizsgalat.vid = diagnozis.vid
+ORDER BY paciens.nev;
+2. Melyik betegségre milyen gyógyszert adnak
+
+SELECT betegseg.bnev,
+       gyogyszer.gynev
+FROM betegseg
+JOIN mit_kap
+ON betegseg.bnev = mit_kap.bnev
+JOIN gyogyszer
+ON mit_kap.gynev = gyogyszer.gynev
+ORDER BY betegseg.bnev;
+3. Mely páciensek érzékenyek valamelyik gyógyszerre
+
+SELECT paciens.nev,
+       gyogyszer.gynev
+FROM paciens
+JOIN mire_erzekeny
+ON paciens.pid = mire_erzekeny.pid
+JOIN gyogyszer
+ON mire_erzekeny.gynev = gyogyszer.gynev
+ORDER BY paciens.nev;
+
+4. Páciens betegsége és az arra adott gyógyszer
+SELECT paciens.nev,
+       betegseg.bnev,
+       gyogyszer.gynev
+FROM paciens
+JOIN vizsgalat
+ON paciens.pid = vizsgalat.pid
+JOIN diagnozis
+ON vizsgalat.vid = diagnozis.vid
+JOIN betegseg
+ON diagnozis.bnev = betegseg.bnev
+JOIN mit_kap
+ON betegseg.bnev = mit_kap.bnev
+JOIN gyogyszer
+ON mit_kap.gynev = gyogyszer.gynev
+ORDER BY paciens.nev;
+
+5. Hány páciens kapott el egy adott betegséget
+SELECT betegseg.bnev,
+       COUNT(paciens.pid) AS paciensek_szama
+FROM betegseg
+JOIN diagnozis
+ON betegseg.bnev = diagnozis.bnev
+JOIN vizsgalat
+ON diagnozis.vid = vizsgalat.vid
+JOIN paciens
+ON vizsgalat.pid = paciens.pid
+GROUP BY betegseg.bnev;

@@ -1,0 +1,50 @@
+INSERT INTO paciens VALUES
+(17402213339,'Kovács Krisztián','Hajdúhadház, Szűk u. 1.','(66) 329-896'),
+(17303313254,'Andrészki Dezső','Téglás, Kossuth utca 125.','(52) 421-643'),
+(25602143598,'Kajár Miklósné','Téglás, Petőfi út 12.','(52) 342-453'),
+(26511123265,'Kocsis Béláné','Téglás, Március 15. utca 3.','(52) 384-345'),
+(14404013214,'Rézbányai Ernő','Hajdúhadház, Bocskai út 35.','(66) 325-643');
+
+INSERT INTO vizsgalat VALUES
+(1,17402213339,'1996-02-11'),
+(2,17303313254,'1996-02-11'),
+(3,25602143598,'1996-02-11'),
+(4,26511123265,'1996-02-11'),
+(5,14404013214,'1996-02-11');
+
+INSERT INTO betegseg VALUES
+('grippe'),
+('hepatitis'),
+('encefaritis'),
+('encephalomylitis'),
+('pneumonia'),
+('bronchitis');
+
+INSERT INTO gyogyszer VALUES
+('Semicilin'),
+('Prednisolon'),
+('Medrol'),
+('Metyl-pred'),
+('Ceclor'),
+('Diflucan'),
+('Calciphedrin');
+
+INSERT INTO mit_kap VALUES
+('Semicilin','grippe'),
+('Prednisolon','hepatitis'),
+('Medrol','encefaritis'),
+('Metyl-pred','encephalomylitis'),
+('Ceclor','pneumonia'),
+('Calciphedrin','bronchitis');
+
+INSERT INTO mire_erzekeny VALUES
+(26511123265,'Diflucan'),
+(26511123265,'Calciphedrin');
+
+INSERT INTO diagnozis VALUES
+(1,'encefaritis','1996-02-11'),
+(1,'encephalomylitis','1996-02-11'),
+(2,'grippe','1996-02-11'),
+(3,'hepatitis','1996-02-11'),
+(4,'pneumonia','1996-02-11'),
+(5,'grippe','1996-02-11');

@@ -1,0 +1,49 @@
+CREATE DATABASE korhaz;
+USE korhaz;
+
+CREATE TABLE paciens (
+    pid INT PRIMARY KEY,
+    nev VARCHAR(100) NOT NULL,
+    cim VARCHAR(200),
+    telefon VARCHAR(20)
+);
+
+CREATE TABLE gyogyszer (
+    gynev VARCHAR(100) PRIMARY KEY
+);
+
+CREATE TABLE betegseg (
+    bnev VARCHAR(100) PRIMARY KEY
+);
+
+CREATE TABLE vizsgalat (
+    vid INT PRIMARY KEY,
+    pid INT,
+    datum DATE,
+    FOREIGN KEY (pid) REFERENCES paciens(pid)
+);
+
+CREATE TABLE mire_erzekeny (
+    pid INT,
+    gynev VARCHAR(100),
+    PRIMARY KEY (pid, gynev),
+    FOREIGN KEY (pid) REFERENCES paciens(pid),
+    FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)
+);
+
+CREATE TABLE diagnozis (
+    vid INT,
+    bnev VARCHAR(100),
+    datum DATE,
+    PRIMARY KEY (vid, bnev),
+    FOREIGN KEY (vid) REFERENCES vizsgalat(vid),
+    FOREIGN KEY (bnev) REFERENCES betegseg(bnev)
+);
+
+CREATE TABLE mit_kap (
+    gynev VARCHAR(100),
+    bnev VARCHAR(100),
+    PRIMARY KEY (gynev, bnev),
+    FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev),
+    FOREIGN KEY (bnev) REFERENCES betegseg(bnev)
+);
