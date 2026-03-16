@@ -14,19 +14,37 @@
             <h1>Orvosi betegnyilvántartás</h1>
             <h5>Adatbázis készítésének folyamataira készítve</h5>
             <ul class="menu">
-                <li><a href="">Feladat</a></li>
-                <li><a href="">Egyed típusok, attribútomok, kapcsolatok</a></li>
-                <li><a href="">ER-modell</a></li>
-                <li><a href="">Relációs modell</a></li>
-                <li><a href="">Adatbázis kódja</a></li>
-                <li><a href="">Lekérdezések</a></li>
+                <li><a href="#1">Feladat</a></li>
+                <li><a href="#2">Egyed típusok, attribútomok, kapcsolatok</a></li>
+                <li><a href="#3">ER-modell</a></li>
+                <li><a href="#4">Relációs modell</a></li>
+                <li><a href="#5">Adatbázis kódja</a></li>
+                <li><a href="#6">Lekérdezések</a></li>
             </ul>
         </div>
         <div class="foresz">
-            <div>
+            <div id="1">
                 <h3>Feladat</h3>
+                <p>Orvosi betegnyilvántartás
+                    Készítsünk relációs adatmodellt egy háziorvosi betegnyilvántartó rendszerhez. Az orvosok elvárásainak
+                    megfelelően az adatbázisnak tartalmaznia kell a betegek személyi adatait, gyógyszerérzékenységüket, az egyes vizsgálatok időpontjait és felírt gyógyszereket.</p>
+                <ul><b>Feltételezzük, hogy:</b>
+                    <li>egy vizsgálaton több betegség is diagnosztizálható</li>
+                    <li>egy betegségre több gyógyszer is felírható</li>
+                    <li>egy páciens több gyógyszerre is lehet érzékeny</li>
+                    <li>egy vizsgálatot a dátum és a vizsgálat kódja határoz meg egyértelműen</li>
+                </ul>
+                <ul><b>Feladatok</b>
+                    <li>Azonosítsd az adatbázis egyedtípusait, az attribútumokat, kapcsolatokat!</li>
+                    <li>Készítsd el az adatbázis ER-modelljét!</li>
+                    <li>Készítsd el az adatbázis Relációs modelljét!</li>
+                    <li>Kódold le az adatbázis phpmyadmin segítségével!</li>
+                    <li>Töltsd fel az adatbázist adatokkal!</li>
+                    <li>Készíts lekérdezéseket az adatbázis tesztelése céljából!</li>
+                    <li>Dokumentáld a munkádat a weben!</li>
+                </ul>
             </div>
-        <div>
+        <div id="2">
             <h3>Egyed típusok, attribútomok</h3>
             <ul>
                 <li>Paciens(pid-PK,nev,cim,telefon)</li>
@@ -50,13 +68,19 @@
                 </ul>
             </ul>
         </div>
-        <div>
+        <div id="3"    >
             <h3>ER-modell</h3>
             <img src="pics/kmknER.drawio.png" alt="">
         </div>
-        <div>
+        <div id="4">
             <h3>Relációs modell</h3>
             <img src="pics/kmknRE.drawio.png" alt="">
+        </div>
+        <div id="5">
+            <h3>Adatbázis kódja</h3>
+        </div>
+        <div id="6">
+            <h3>Lekérdezések</h3>
         </div>
     </div>
     </div>
