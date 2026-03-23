@@ -130,6 +130,73 @@
         </div>
         <div id="6">
             <h3>Lekérdezések</h3>
+            <ol>
+                <li>Melyik páciens milyen betegséget kapott diagnózisként
+                    <p>SELECT paciens.nev,
+                        vizsgalat.vid,
+                        diagnozis.datum,
+                        diagnozis.bnev
+                 FROM paciens
+                 JOIN vizsgalat
+                 ON paciens.pid = vizsgalat.pid
+                 JOIN diagnozis
+                 ON vizsgalat.vid = diagnozis.vid
+                 ORDER BY paciens.nev;</p>
+                </li>
+                <hr>
+                <li>Melyik betegségre milyen gyógyszert adnak
+                    <p>SELECT betegseg.bnev,
+                        gyogyszer.gynev
+                 FROM betegseg
+                 JOIN mit_kap
+                 ON betegseg.bnev = mit_kap.bnev
+                 JOIN gyogyszer
+                 ON mit_kap.gynev = gyogyszer.gynev
+                 ORDER BY betegseg.bnev;</p>
+                </li>
+                <hr>
+                <li>Mely páciensek érzékenyek valamelyik gyógyszerre
+                    <p>SELECT paciens.nev,
+                        gyogyszer.gynev
+                 FROM paciens
+                 JOIN mire_erzekeny
+                 ON paciens.pid = mire_erzekeny.pid
+                 JOIN gyogyszer
+                 ON mire_erzekeny.gynev = gyogyszer.gynev
+                 ORDER BY paciens.nev;</p>
+                </li>
+                <hr>
+                <li>Páciens betegsége és az arra adott gyógyszer
+                    <p>SELECT paciens.nev,
+                        betegseg.bnev,
+                        gyogyszer.gynev
+                 FROM paciens
+                 JOIN vizsgalat
+                 ON paciens.pid = vizsgalat.pid
+                 JOIN diagnozis
+                 ON vizsgalat.vid = diagnozis.vid
+                 JOIN betegseg
+                 ON diagnozis.bnev = betegseg.bnev
+                 JOIN mit_kap
+                 ON betegseg.bnev = mit_kap.bnev
+                 JOIN gyogyszer
+                 ON mit_kap.gynev = gyogyszer.gynev
+                 ORDER BY paciens.nev;</p>
+                </li>
+                <hr>
+                <li>Hány páciens kapott el egy adott betegséget
+                    <p>SELECT betegseg.bnev,
+                        COUNT(paciens.pid) AS paciensek_szama
+                 FROM betegseg
+                 JOIN diagnozis
+                 ON betegseg.bnev = diagnozis.bnev
+                 JOIN vizsgalat
+                 ON diagnozis.vid = vizsgalat.vid
+                 JOIN paciens
+                 ON vizsgalat.pid = paciens.pid
+                 GROUP BY betegseg.bnev;</p>
+                </li>
+            </ol>
         </div>
     </div>
     </div>
