@@ -78,6 +78,55 @@
         </div>
         <div id="5">
             <h3>Adatbázis kódja</h3>
+            <p>CREATE DATABASE korhaz;<br>
+                USE korhaz;<br>
+                <br>
+                CREATE TABLE paciens (<br>
+                    pid INT PRIMARY KEY,<br>
+                    nev VARCHAR(100) NOT NULL,<br>
+                    cim VARCHAR(200),<br>
+                    telefon VARCHAR(20)<br>
+                );<br>
+                <br>
+                CREATE TABLE gyogyszer (<br>
+                    gynev VARCHAR(100) PRIMARY KEY<br>
+                );<br>
+                <br>
+                CREATE TABLE betegseg (<br>
+                    bnev VARCHAR(100) PRIMARY KEY<br>
+                );<br>
+                <br>
+                CREATE TABLE vizsgalat (<br>
+                    vid INT PRIMARY KEY,<br>
+                    pid INT,<br>
+                    datum DATE,<br>
+                    FOREIGN KEY (pid) REFERENCES paciens(pid)<br>
+                );<br>
+                <br>
+                CREATE TABLE mire_erzekeny (<br>
+                    pid INT,<br>
+                    gynev VARCHAR(100),<br>
+                    PRIMARY KEY (pid, gynev),<br>
+                    FOREIGN KEY (pid) REFERENCES paciens(pid),<br>
+                    FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)<br>
+                );<br>
+                <br>
+                CREATE TABLE diagnozis (<br>
+                    vid INT,<br>
+                    bnev VARCHAR(100),<br>
+                    datum DATE,<br>
+                    PRIMARY KEY (vid, bnev),<br>
+                    FOREIGN KEY (vid) REFERENCES vizsgalat(vid),<br>
+                    FOREIGN KEY (bnev) REFERENCES betegseg(bnev)<br>
+                );<br>
+                <br>
+                CREATE TABLE mit_kap (<br>
+                    gynev VARCHAR(100),<br>
+                    bnev VARCHAR(100),<br>
+                    PRIMARY KEY (gynev, bnev),<br>
+                    FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev),<br>
+                    FOREIGN KEY (bnev) REFERENCES betegseg(bnev)<br>
+                );</p>
         </div>
         <div id="6">
             <h3>Lekérdezések</h3>
