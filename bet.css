@@ -31,3 +31,19 @@ img{
     margin-left: 25%;
     margin-right: 25%;
 }
+.tablak{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.tablak table tr td{
+    border: 1px solid black ;
+    padding: 5px;
+}
+.tablak table{
+    border-collapse: collapse;
+    margin: 1%;
+}
+.tablak table tr th{
+    border: 1px black solid;
+}

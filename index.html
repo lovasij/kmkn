@@ -26,8 +26,10 @@
             <div id="1">
                 <h3>Feladat</h3>
                 <p>Orvosi betegnyilvántartás
-                    Készítsünk relációs adatmodellt egy háziorvosi betegnyilvántartó rendszerhez. Az orvosok elvárásainak
-                    megfelelően az adatbázisnak tartalmaznia kell a betegek személyi adatait, gyógyszerérzékenységüket, az egyes vizsgálatok időpontjait és felírt gyógyszereket.</p>
+                    Készítsünk relációs adatmodellt egy háziorvosi betegnyilvántartó rendszerhez. Az orvosok
+                    elvárásainak
+                    megfelelően az adatbázisnak tartalmaznia kell a betegek személyi adatait, gyógyszerérzékenységüket,
+                    az egyes vizsgálatok időpontjait és felírt gyógyszereket.</p>
                 <ul><b>Feltételezzük, hogy:</b>
                     <li>egy vizsgálaton több betegség is diagnosztizálható</li>
                     <li>egy betegségre több gyógyszer is felírható</li>
@@ -43,162 +45,402 @@
                     <li>Készíts lekérdezéseket az adatbázis tesztelése céljából!</li>
                     <li>Dokumentáld a munkádat a weben!</li>
                 </ul>
+                <b>Adatok</b>
+                <p></p>
+                <div class="tablak">
+                    <table>
+                        <tr>
+                            <td><b>Páciens</b></td>
+                        </tr>
+                        <tr>
+                            <th> Pid </th>
+                            <th>név </th>
+                            <th>cím</th>
+                            <th>telefon</th>
+                        </tr>
+                        <tr>
+                            <td>17402213339</td>
+                            <td>Kovács Krisztián</td>
+                            <td>Hajdúhadház, Szűk u. 1.</td>
+                            <td>(66) 329-896</td>
+                        </tr>
+                        <tr>
+                            <td>17303313254</td>
+                            <td>Andrészki Dezső</td>
+                            <td>Téglás, Kossuth utca 125.</td>
+                            <td>(52) 421-643</td>
+                        </tr>
+                        <tr>
+                            <td>25602143598</td>
+                            <td>Kajár Miklósné</td>
+                            <td>Téglás, Petőfi út 12.</td>
+                            <td>(52) 342-453</td>
+                        </tr>
+                        <tr>
+                            <td>26511123265</td>
+                            <td>Kocsis Béláné</td>
+                            <td>Téglás, Március 15. utca 3.</td>
+                            <td>(52) 384-345</td>
+                        </tr>
+                        <tr>
+                            <td>14404013214</td>
+                            <td>Rézbányai Ernő</td>
+                            <td>Hajdúhadház, Bocskai út 35.</td>
+                            <td>(66) 325-643</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table>
+                        <tr><td><b>vizsgálat</b></td></tr>
+                        <tr>
+                            <th>Vid</th>
+                            <th>Pid</th>
+                            <th>Dátum</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>17402213339</td>
+                            <td>1996.02.11</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>17303313254</td>
+                            <td>1996.02.11</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>25602143598</td>
+                            <td>1996.02.11</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>26511123265</td>
+                            <td>1996.02.11</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>14404013214</td>
+                            <td>1996.02.11</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table>
+                        <tr><td><b>betegség</b></td></tr>
+                        <tr>
+                            <th>Bnév</th>
+                        </tr>
+                        <tr>
+                            <td>grippe</td>
+                        </tr>
+                        <tr>
+                            <td>hepatitis</td>
+                        </tr>
+                        <tr>
+                            <td>encefaritis</td>
+                        </tr>
+                        <tr>
+                            <td>encephalomylitis</td>
+                        </tr>
+                        <tr>
+                            <td>pneumonia</td>
+                        </tr>
+                        <tr>
+                            <td>bronchitis</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table>
+                        <tr><td><b>gyógyszer</b></td></tr>
+                        <tr>
+                            <th>Gynév</th>
+                        </tr>
+                        <tr>
+                            <td>Semicilin</td>
+                        </tr>
+                        <tr>
+                            <td>Prednisolon</td>
+                        </tr>
+                        <tr>
+                            <td>Medrol</td>
+                        </tr>
+                        <tr>
+                            <td>Metyl-pred</td>
+                        </tr>
+                        <tr>
+                            <td>Ceclor</td>
+                        </tr>
+                        <tr>
+                            <td>Diflucan</td>
+                        </tr>
+                        <tr>
+                            <td>Calciphedrin</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table>
+                        <tr><td><b>Mit kap</b></td></tr>
+                        <tr>
+                            <th>Bnév</th>
+                            <th>Gynév</th>
+                        </tr>
+                        <tr>
+                            <td>grippe</td>
+                            <td>Semicilin</td>
+                        </tr>
+                        <tr>
+                            <td>hepatitis</td>
+                            <td>Prednisolon</td>
+                        </tr>
+                        <tr>
+                            <td>encefaritis</td>
+                            <td>Medrol</td>
+                        </tr>
+                        <tr>
+                            <td>encephalomylitis</td>
+                            <td>Metyl-pred</td>
+                        </tr>
+                        <tr>
+                            <td>pneumonia</td>
+                            <td>Ceclor</td>
+                        </tr>
+                        <tr>
+                            <td>bronchitis</td>
+                            <td>Calciphedrin</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table>
+                        <tr><td><b>mire érzékeny</b></td></tr>
+                        <tr>
+                            <th>Pid</th>
+                            <th>Gynév</th>
+                        </tr>
+                        <tr>
+                            <td>17402213339</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>17303313254</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>25602143598</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>26511123265</td>
+                            <td>Diflucan</td>
+                        </tr>
+                        <tr>
+                            <td>14404013214</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>26511123265</td>
+                            <td>Calciphedrin</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table>
+                        <tr><td><b>diagnózis</b></td></tr>
+                        <tr>
+                            <th>Vid</th>
+                            <th>Dátum</th>
+                            <th>Bnév</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1996.02.11</td>
+                            <td>encefaritis</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1996.02.11</td>
+                            <td>encephalomylitis</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>1996.02.11</td>
+                            <td>grippe</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1996.02.11</td>
+                            <td>hepatitis</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>1996.02.11</td>
+                            <td>pneumonia</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>1996.02.11</td>
+                            <td>grippe</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        <div id="2">
-            <h3>Egyed típusok, attribútomok</h3>
-            <ul>
-                <li>Paciens(pid-PK,nev,cim,telefon)</li>
-                <li>vizsgalat(vid-PK,pid-FK,datum)</li>
-                <li>betegseg(bnev-PK)</li>
-                <li>gyogyszer(gynev-PK)</li>
-            </ul>
-            <h3>Kapcsolatok</h3>
-            <ul><li>paciens-vizsgalat</li>
+            <div id="2">
+                <h3>Egyed típusok, attribútomok</h3>
                 <ul>
-                    <li>1-N</li>
-                </ul><li>vizsgalat-betegseg</li>
-                <ul>
-                    <li>N-M (diagnózis) (vid-PK-FK,Pid-PK-FK,datum_FK)</li>
-                </ul><li>betegseg-gyogyszer</li>
-                <ul>
-                    <li>N-M (mit-kap)(bnev-FK-PK, gynev-FK-PK)</li>
-                </ul><li>paciens-gyogyszer</li>
-                <ul>
-                    <li>N-M (mire érzékeny) (Pid-FK-PK, gynev-FK-PK)</li>
+                    <li>Paciens(pid-PK,nev,cim,telefon)</li>
+                    <li>vizsgalat(vid-PK,pid-FK,datum)</li>
+                    <li>betegseg(bnev-PK)</li>
+                    <li>gyogyszer(gynev-PK)</li>
                 </ul>
-            </ul>
-        </div>
-        <div id="3"    >
-            <h3>ER-modell</h3>
-            <img src="pics/kmknER.drawio.png" alt="">
-        </div>
-        <div id="4">
-            <h3>Relációs modell</h3>
-            <img src="pics/kmknRE.drawio.png" alt="">
-        </div>
-        <div id="5">
-            <h3>Adatbázis kódja</h3>
-            <p>CREATE DATABASE korhaz;<br>
-                USE korhaz;<br>
-                <br>
-                CREATE TABLE paciens (<br>
+                <h3>Kapcsolatok</h3>
+                <ul>
+                    <li>paciens-vizsgalat</li>
+                    <ul>
+                        <li>1-N</li>
+                    </ul>
+                    <li>vizsgalat-betegseg</li>
+                    <ul>
+                        <li>N-M (diagnózis) (vid-PK-FK,Pid-PK-FK,datum_FK)</li>
+                    </ul>
+                    <li>betegseg-gyogyszer</li>
+                    <ul>
+                        <li>N-M (mit-kap)(bnev-FK-PK, gynev-FK-PK)</li>
+                    </ul>
+                    <li>paciens-gyogyszer</li>
+                    <ul>
+                        <li>N-M (mire érzékeny) (Pid-FK-PK, gynev-FK-PK)</li>
+                    </ul>
+                </ul>
+            </div>
+            <div id="3">
+                <h3>ER-modell</h3>
+                <img src="pics/kmknER.drawio.png" alt="">
+            </div>
+            <div id="4">
+                <h3>Relációs modell</h3>
+                <img src="pics/kmknRE.drawio.png" alt="">
+            </div>
+            <div id="5">
+                <h3>Adatbázis kódja</h3>
+                <p>CREATE DATABASE korhaz;<br>
+                    USE korhaz;<br>
+                    <br>
+                    CREATE TABLE paciens (<br>
                     pid INT PRIMARY KEY,<br>
                     nev VARCHAR(100) NOT NULL,<br>
                     cim VARCHAR(200),<br>
                     telefon VARCHAR(20)<br>
-                );<br>
-                <br>
-                CREATE TABLE gyogyszer (<br>
+                    );<br>
+                    <br>
+                    CREATE TABLE gyogyszer (<br>
                     gynev VARCHAR(100) PRIMARY KEY<br>
-                );<br>
-                <br>
-                CREATE TABLE betegseg (<br>
+                    );<br>
+                    <br>
+                    CREATE TABLE betegseg (<br>
                     bnev VARCHAR(100) PRIMARY KEY<br>
-                );<br>
-                <br>
-                CREATE TABLE vizsgalat (<br>
+                    );<br>
+                    <br>
+                    CREATE TABLE vizsgalat (<br>
                     vid INT PRIMARY KEY,<br>
                     pid INT,<br>
                     datum DATE,<br>
                     FOREIGN KEY (pid) REFERENCES paciens(pid)<br>
-                );<br>
-                <br>
-                CREATE TABLE mire_erzekeny (<br>
+                    );<br>
+                    <br>
+                    CREATE TABLE mire_erzekeny (<br>
                     pid INT,<br>
                     gynev VARCHAR(100),<br>
                     PRIMARY KEY (pid, gynev),<br>
                     FOREIGN KEY (pid) REFERENCES paciens(pid),<br>
                     FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev)<br>
-                );<br>
-                <br>
-                CREATE TABLE diagnozis (<br>
+                    );<br>
+                    <br>
+                    CREATE TABLE diagnozis (<br>
                     vid INT,<br>
                     bnev VARCHAR(100),<br>
                     datum DATE,<br>
                     PRIMARY KEY (vid, bnev),<br>
                     FOREIGN KEY (vid) REFERENCES vizsgalat(vid),<br>
                     FOREIGN KEY (bnev) REFERENCES betegseg(bnev)<br>
-                );<br>
-                <br>
-                CREATE TABLE mit_kap (<br>
+                    );<br>
+                    <br>
+                    CREATE TABLE mit_kap (<br>
                     gynev VARCHAR(100),<br>
                     bnev VARCHAR(100),<br>
                     PRIMARY KEY (gynev, bnev),<br>
                     FOREIGN KEY (gynev) REFERENCES gyogyszer(gynev),<br>
                     FOREIGN KEY (bnev) REFERENCES betegseg(bnev)<br>
-                );</p>
+                    );
+                </p>
+            </div>
+            <div id="6">
+                <h3>Lekérdezések</h3>
+                <ol>
+                    <li>Melyik páciens milyen betegséget kapott diagnózisként
+                        <p>SELECT paciens.nev,
+                            vizsgalat.vid,
+                            diagnozis.datum,
+                            diagnozis.bnev
+                            FROM paciens
+                            JOIN vizsgalat
+                            ON paciens.pid = vizsgalat.pid
+                            JOIN diagnozis
+                            ON vizsgalat.vid = diagnozis.vid
+                            ORDER BY paciens.nev;</p>
+                    </li>
+                    <hr>
+                    <li>Melyik betegségre milyen gyógyszert adnak
+                        <p>SELECT betegseg.bnev,
+                            gyogyszer.gynev
+                            FROM betegseg
+                            JOIN mit_kap
+                            ON betegseg.bnev = mit_kap.bnev
+                            JOIN gyogyszer
+                            ON mit_kap.gynev = gyogyszer.gynev
+                            ORDER BY betegseg.bnev;</p>
+                    </li>
+                    <hr>
+                    <li>Mely páciensek érzékenyek valamelyik gyógyszerre
+                        <p>SELECT paciens.nev,
+                            gyogyszer.gynev
+                            FROM paciens
+                            JOIN mire_erzekeny
+                            ON paciens.pid = mire_erzekeny.pid
+                            JOIN gyogyszer
+                            ON mire_erzekeny.gynev = gyogyszer.gynev
+                            ORDER BY paciens.nev;</p>
+                    </li>
+                    <hr>
+                    <li>Páciens betegsége és az arra adott gyógyszer
+                        <p>SELECT paciens.nev,
+                            betegseg.bnev,
+                            gyogyszer.gynev
+                            FROM paciens
+                            JOIN vizsgalat
+                            ON paciens.pid = vizsgalat.pid
+                            JOIN diagnozis
+                            ON vizsgalat.vid = diagnozis.vid
+                            JOIN betegseg
+                            ON diagnozis.bnev = betegseg.bnev
+                            JOIN mit_kap
+                            ON betegseg.bnev = mit_kap.bnev
+                            JOIN gyogyszer
+                            ON mit_kap.gynev = gyogyszer.gynev
+                            ORDER BY paciens.nev;</p>
+                    </li>
+                    <hr>
+                    <li>Hány páciens kapott el egy adott betegséget
+                        <p>SELECT betegseg.bnev,
+                            COUNT(paciens.pid) AS paciensek_szama
+                            FROM betegseg
+                            JOIN diagnozis
+                            ON betegseg.bnev = diagnozis.bnev
+                            JOIN vizsgalat
+                            ON diagnozis.vid = vizsgalat.vid
+                            JOIN paciens
+                            ON vizsgalat.pid = paciens.pid
+                            GROUP BY betegseg.bnev;</p>
+                    </li>
+                </ol>
+            </div>
         </div>
-        <div id="6">
-            <h3>Lekérdezések</h3>
-            <ol>
-                <li>Melyik páciens milyen betegséget kapott diagnózisként
-                    <p>SELECT paciens.nev,
-                        vizsgalat.vid,
-                        diagnozis.datum,
-                        diagnozis.bnev
-                 FROM paciens
-                 JOIN vizsgalat
-                 ON paciens.pid = vizsgalat.pid
-                 JOIN diagnozis
-                 ON vizsgalat.vid = diagnozis.vid
-                 ORDER BY paciens.nev;</p>
-                </li>
-                <hr>
-                <li>Melyik betegségre milyen gyógyszert adnak
-                    <p>SELECT betegseg.bnev,
-                        gyogyszer.gynev
-                 FROM betegseg
-                 JOIN mit_kap
-                 ON betegseg.bnev = mit_kap.bnev
-                 JOIN gyogyszer
-                 ON mit_kap.gynev = gyogyszer.gynev
-                 ORDER BY betegseg.bnev;</p>
-                </li>
-                <hr>
-                <li>Mely páciensek érzékenyek valamelyik gyógyszerre
-                    <p>SELECT paciens.nev,
-                        gyogyszer.gynev
-                 FROM paciens
-                 JOIN mire_erzekeny
-                 ON paciens.pid = mire_erzekeny.pid
-                 JOIN gyogyszer
-                 ON mire_erzekeny.gynev = gyogyszer.gynev
-                 ORDER BY paciens.nev;</p>
-                </li>
-                <hr>
-                <li>Páciens betegsége és az arra adott gyógyszer
-                    <p>SELECT paciens.nev,
-                        betegseg.bnev,
-                        gyogyszer.gynev
-                 FROM paciens
-                 JOIN vizsgalat
-                 ON paciens.pid = vizsgalat.pid
-                 JOIN diagnozis
-                 ON vizsgalat.vid = diagnozis.vid
-                 JOIN betegseg
-                 ON diagnozis.bnev = betegseg.bnev
-                 JOIN mit_kap
-                 ON betegseg.bnev = mit_kap.bnev
-                 JOIN gyogyszer
-                 ON mit_kap.gynev = gyogyszer.gynev
-                 ORDER BY paciens.nev;</p>
-                </li>
-                <hr>
-                <li>Hány páciens kapott el egy adott betegséget
-                    <p>SELECT betegseg.bnev,
-                        COUNT(paciens.pid) AS paciensek_szama
-                 FROM betegseg
-                 JOIN diagnozis
-                 ON betegseg.bnev = diagnozis.bnev
-                 JOIN vizsgalat
-                 ON diagnozis.vid = vizsgalat.vid
-                 JOIN paciens
-                 ON vizsgalat.pid = paciens.pid
-                 GROUP BY betegseg.bnev;</p>
-                </li>
-            </ol>
-        </div>
-    </div>
     </div>
 </body>
 
